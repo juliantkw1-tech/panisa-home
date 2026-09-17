@@ -1,6 +1,10 @@
 # PANISA home
 
-Thai task tracker and single bookmark entry point for the PANISA sales and ads report, hosted on the user's GitHub Pages without login at their explicit request. Open `report.html` for the portable interactive report. Its reviewed data covers 14–15 September 2026; this is a saved report, not a live connection. Customer names are replaced with anonymous conversation codes; contact details, private messages and account/order identifiers are excluded. The original private source stays outside this repository.
+Thai task tracker and bookmark entry point on the owner's GitHub account, moeionblog-create. The public homepage contains sanitized task status only. On 17 September 2026 the owner requested Google login for the sales/ads report and restoring original customer names behind that login.
+
+`report.html` now forwards to the protected report on the owner's Cloudflare Workers account: https://panisa-private-report.moeionblog.workers.dev/report.html. Existing query parameters (tab/date) are preserved. The report accepts only the owner's verified Google account. Private HTML, datasets, customer identifiers and credentials must NEVER be uploaded to this repository. Earlier public report revisions contain anonymized data only.
+
+This change is authentication and access routing, not a data refresh. The saved report still covers 14–15 September 2026.
 
 ## Status contract
 
@@ -13,3 +17,4 @@ Automated writers: pull latest source, preserve other tasks, update checkedAt/up
 This page reads the status file every five minutes while visible. It does not execute tasks or send background push notifications. The desktop automation needs its host available. No daily sales-report automation has been implied or added.
 
 To preview, serve this directory over HTTP. No installation or build is needed.
+
