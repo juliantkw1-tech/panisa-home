@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#162846">
+  <title>PANISA · งานและรายงานของร้าน</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <aside class="sidebar">
+    <a class="brand" href="./" aria-label="PANISA หน้าแรก"><span class="monogram">P</span><span>PANISA<small>งานและรายงานของร้าน</small></span></a>
+    <nav aria-label="เมนูหลัก">
+      <a class="nav-item selected" href="#main" aria-current="page"><span aria-hidden="true">▦</span> หน้าติดตามงาน</a>
+      <a class="nav-item" href="https://panisa-daily-review.juliantkw1.chatgpt.site/?view=1&amp;tab=dashboard"><span aria-hidden="true">↗</span> รายงานยอดขายและโฆษณา</a>
+    </nav>
+    <div class="sidebar-note"><span class="tiny-label">ลิงก์เดียวสำหรับร้าน</span><p>บันทึกหน้านี้เป็นบุ๊กมาร์ก<br>เปิดดูงานและเข้ารายงานได้ที่นี่</p><button class="text-button light" id="copy-link">คัดลอกลิงก์หน้านี้ ↗</button><span id="copy-result" role="status"></span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>ปานิศา / หน้าแรก</span><time id="today"></time></header>
+    <main id="main">
+      <section class="page-heading"><div><p class="eyebrow">ภาพรวมงานของร้าน</p><h1>วันนี้มีอะไรต้องติดตาม</h1><p class="muted">ดูงานที่ต้องช่วย งานรอทำ และผลที่ยืนยันแล้ว</p></div><button class="button refresh" id="refresh" disabled><span aria-hidden="true">↻</span> ตรวจข้อมูลล่าสุด</button></section>
+      <p class="sync-line" id="sync-status" role="status">กำลังอ่านข้อมูลสถานะ…</p>
+      <div id="load-error" class="notice danger" hidden role="alert"></div>
+      <section class="summary" aria-label="สรุปสถานะงาน" id="summary"></section>
+      <div class="content-grid">
+        <section class="work-panel" aria-labelledby="work-title">
+          <div class="section-heading"><h2 id="work-title">งานที่ติดตาม</h2><span class="subtle" id="task-count"></span></div>
+          <div class="filters" role="group" aria-label="กรองงาน"><button class="filter active" data-filter="all" aria-pressed="true">ทั้งหมด</button><button class="filter" data-filter="attention" aria-pressed="false">ต้องดูแล</button><button class="filter" data-filter="scheduled" aria-pressed="false">รอทำ</button><button class="filter" data-filter="complete" aria-pressed="false">เสร็จแล้ว</button></div>
+          <div id="tasks"><p class="empty">กำลังโหลดรายการงาน…</p></div>
+        </section>
+        <aside class="right-column">
+          <section class="reports" aria-labelledby="report-title"><p class="eyebrow">รายงานของร้าน</p><h2 id="report-title">ยอดขายและโฆษณา</h2><p>เปิดรายงานเดิมที่คุณใช้<br>ยอดขาย ค่าแอด และที่มาของแชท</p><a class="button primary" href="https://panisa-daily-review.juliantkw1.chatgpt.site/?view=1&amp;tab=dashboard">เปิดรายงานภาพรวม <span aria-hidden="true">↗</span></a><div class="report-links"><a href="https://panisa-daily-review.juliantkw1.chatgpt.site/?view=1&amp;tab=ads">เทียบประสิทธิภาพแอด <span aria-hidden="true">↗</span></a><a href="https://panisa-daily-review.juliantkw1.chatgpt.site/?view=1&amp;tab=chats">ดูที่มาของแชท <span aria-hidden="true">↗</span></a><a href="https://panisa-daily-review.juliantkw1.chatgpt.site/?view=1&amp;tab=quality">กำไรและความครบถ้วน <span aria-hidden="true">↗</span></a></div><p class="report-foot">รายงานใช้สิทธิ์เข้าดูเดิม<br>ตรวจวันที่ข้อมูลในรายงานก่อนใช้ตัดสินใจ</p></section>
+          <section class="help-card"><h2>ทำงานตามนัดได้เมื่อ…</h2><ul><li>เปิดคอมพิวเตอร์และแอป Codex ไว้</li><li>เข้าสู่ระบบแหล่งข้อมูลที่งานต้องใช้</li></ul><p>ถ้าต้องให้คุณช่วย จะบอกเหตุผลในสถานะงานและในแชท</p><details><summary>หน้านี้แจ้งเตือนอย่างไร</summary><p>เมื่อเปิดหน้านี้ ระบบจะตรวจว่ามีงานเลยกำหนดหรือไม่ และอ่านสถานะใหม่ทุก 5 นาที หน้านี้ยังไม่ส่งแจ้งเตือนเมื่อปิดเว็บ การแจ้งจากงานอัตโนมัติอยู่ใน Codex</p><p>วันครบกำหนดไม่ใช่หลักฐานว่างานทำเสร็จ สถานะสำเร็จต้องมีบันทึกผลยืนยัน</p></details></section>
+        </aside>
+      </div>
+      <section class="history-panel" aria-labelledby="history-title"><div class="section-heading"><h2 id="history-title">บันทึกล่าสุด</h2><span class="subtle">แยกการตั้งงานออกจากผลการทำงาน</span></div><ol id="history"></ol></section>
+      <footer>เวลาประเทศไทย · หน้านี้แสดงสถานะงาน ไม่มีรายชื่อหรือเบอร์โทรลูกค้า</footer>
+    </main>
+  </div>
+</body>
+</html>
