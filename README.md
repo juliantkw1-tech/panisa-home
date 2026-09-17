@@ -1,6 +1,6 @@
 # PANISA home
 
-Thai task tracker and single bookmark entry point for the existing private PANISA sales and ads report. Plain HTML/CSS/JavaScript on GitHub Pages. The private report keeps its existing access controls; this public repository contains no customer records or sales dataset.
+Thai task tracker and single bookmark entry point for the PANISA sales and ads report, hosted on the user's GitHub Pages without login at their explicit request. Open `report.html` for the portable interactive report. Its reviewed data covers 14–15 September 2026; this is a saved report, not a live connection. Customer names are replaced with anonymous conversation codes; contact details, private messages and account/order identifiers are excluded. The original private source stays outside this repository.
 
 ## Status contract
 
